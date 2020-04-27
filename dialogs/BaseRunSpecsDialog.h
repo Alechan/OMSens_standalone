@@ -7,14 +7,16 @@ class BaseRunSpecsDialog : public QDialog
 {
     Q_OBJECT
 public:
-    BaseRunSpecsDialog(QWidget *parent = 0) : QDialog(parent) {}
+    BaseRunSpecsDialog(QWidget *parent = nullptr) : QDialog(parent) {}
 
     // Getters
     virtual QJsonDocument getRunSpecifications() const = 0;
     virtual QString getDestFolderPath() const = 0;
 
     // Convention
-    virtual QString pythonScriptName() = 0;
+    QString mPythonScriptLibraryPath;
+    QString mPythonScriptPath;
+    QString defaultResultsFolderPath;
 
 signals:
 

@@ -13,7 +13,8 @@ class BaseResultsDialog : public QDialog
     Q_OBJECT
 public:
     // Constructors
-    BaseResultsDialog(QWidget *parent = 0) : QDialog(parent) {}
+    BaseResultsDialog(QWidget *parent = nullptr) : QDialog(parent) {}
+
 
     // Components shared between all results dialogs
     QLabel      *mpResultsFolderPathLabel;
@@ -48,7 +49,7 @@ public:
 public slots:
    void fileBrowserInResultsFolder(bool)
    {
-       QString folderPath =mpResultsFolderPathValue->text();
+       QString folderPath = mpResultsFolderPathValue->text();
        QDesktopServices::openUrl(QUrl::fromLocalFile(folderPath));
    }
 };
